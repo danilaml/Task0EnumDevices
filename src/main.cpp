@@ -134,7 +134,7 @@ int main()
             std::cout << "        OpenCL device memory size: " << mem_size / (1024 * 1024) << " (MB)" << std::endl;
             
             auto mem_cache_size = getDeviceInfo<cl_ulong>(device, CL_DEVICE_GLOBAL_MEM_CACHE_SIZE);
-            std::cout << "        OpenCL device memory cache size: " << mem_cache_size / (1024 * 1024) << " (MB)" << std::endl;
+            std::cout << "        OpenCL device memory cache size: " << mem_cache_size / 1024 << " (KB)" << std::endl;
             auto extensions = getDeviceInfo<char[]>(device, CL_DEVICE_EXTENSIONS);
             std::cout << "        OpenCL device supported extensions: " << extensions.data() << std::endl;
             auto highest_opencl = getDeviceInfo<char[]>(device, CL_DEVICE_OPENCL_C_VERSION);
